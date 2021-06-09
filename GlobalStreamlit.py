@@ -27,12 +27,13 @@ from tensorflow.keras.backend import manual_variable_initialization
 manual_variable_initialization(True)
 
 #header
-st.title('Multiple NLP Algos (MNA)')
-st.write('MNA helps with:')
-st.write('#1 Translation to Spanish')
-st.write('#2 Completing your sentences as you type')
-st.write('#3 Chatbot: Answering product questions')
-st.write('#4 Deduct whether your post matches FB or Twitter sub-reddit')
+st.title('Multiple NLP Algos')
+st.write('Algos helps with: Spanish translation, completing sentences, chatbot to answer card questions, deducting whether post sounds like FB or Twitter')
+st.write('Select your desired algo from the dropdown in the left pane')
+#st.write('#1 Translation to Spanish')
+#st.write('#2 Completing your sentences as you type')
+#st.write('#3 Chatbot: Answering card questions')
+#st.write('#4 Deduct whether your post matches FB or Twitter sub-reddit')
 
 page = st.sidebar.selectbox(
 'Select a page:',
@@ -189,11 +190,11 @@ if page == 'Translate to Spanish':
 
 if page == 'Chatbot:  Answering card questions':
     #header
-    st.title('Customer questionnaire')
+    st.title('Basic Chatbot for Card Customers')
 
     # user inputs
     question_text =''
-    st.write('We can help with questions related to the application process, payment process, rewards, & credit bureau')
+    st.write('We can help with questions related to the card application process, payments, rewards, & credit bureau')
     question_text = st.text_input("How can we help you?  Please type your question below and hit 'Enter'")
 
     #Read in the Answer Corpus
@@ -215,15 +216,17 @@ if page == 'Chatbot:  Answering card questions':
 
     # loading models
     cs_model = pickle.load(open('./COF_CS_Chat/models/cs_model.p', 'rb'))
-
+    st.write('h1')
     # processing inputs for nlp model
     input_text = preprocess_nlp(question_text)
     ip_series = pd.Series(input_text)
+    st.write('h2')
     answer_nlp = cs_model.predict(input_text)
+    st.write('h3')
     if question_text != '':
         ans.loc[answer_nlp[0]][0]
     st.write('***  The answer is generated using NLP **')
-    st.write('And if your question was what is the meaning of life, it is -- "Well, its nothing very special. Uh, try to be nice to people, avoid eating fat, read a good book every now and then, get some walking in, and try to live together in peace and harmony with people of all creeds and nations."')
+    st.write('Opportunities to improve chatbot ability by feeding real chats to train the model better"')
 
     ##############################################################
 ### BELOW SECTION IS FOR COMPLETING SENTENCES ####
