@@ -215,6 +215,7 @@ if page == 'Chatbot:  Answering card questions':
         #tokens_filtered= [word for word in lem_token if not word in stopwords.words('english')]
         joined_text = ' '.join(lem_token)
         input_list.append(joined_text)
+        st.write('h2')
         return input_list
 
     # loading models
@@ -222,7 +223,7 @@ if page == 'Chatbot:  Answering card questions':
     st.write('h1')
     # processing inputs for nlp model
     input_text = preprocess_nlp(question_text)
-
+    st.write(input_text)
     ip_series = pd.Series(input_text)
     st.write('h2')
     answer_nlp = cs_model.predict(input_text)
