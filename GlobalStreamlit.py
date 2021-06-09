@@ -219,6 +219,7 @@ if page == 'Chatbot:  Answering card questions':
     st.write('h1')
     # processing inputs for nlp model
     input_text = preprocess_nlp(question_text)
+    st.write('h1')
     ip_series = pd.Series(input_text)
     st.write('h2')
     answer_nlp = cs_model.predict(input_text)
