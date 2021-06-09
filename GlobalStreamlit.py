@@ -204,9 +204,12 @@ if page == 'Chatbot:  Answering card questions':
     # function to preprocess user inputs for nlp model
     def preprocess_nlp(question):
         input_list = []
+        st.write('h2')
         processed_question = question.replace('-', '')
         tokenizer = RegexpTokenizer('\w+|\$[\d.]+|S+')
+        st.write('h2')
         token = tokenizer.tokenize(processed_question.lower())
+        st.write('h2')
         lemmatizer = WordNetLemmatizer()
         lem_token = [lemmatizer.lemmatize(word) for word in token]
         #tokens_filtered= [word for word in lem_token if not word in stopwords.words('english')]
@@ -219,7 +222,7 @@ if page == 'Chatbot:  Answering card questions':
     st.write('h1')
     # processing inputs for nlp model
     input_text = preprocess_nlp(question_text)
-    st.write('h1')
+
     ip_series = pd.Series(input_text)
     st.write('h2')
     answer_nlp = cs_model.predict(input_text)
