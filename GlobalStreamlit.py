@@ -209,9 +209,11 @@ if page == 'Chatbot:  Answering card questions':
         tokenizer = RegexpTokenizer('\w+|\$[\d.]+|S+')
         st.write('h2')
         token = tokenizer.tokenize(processed_question.lower())
-        st.write('h2')
+
         lemmatizer = WordNetLemmatizer()
+        st.write('h2')
         lem_token = [lemmatizer.lemmatize(word) for word in token]
+        st.write('h2')
         #tokens_filtered= [word for word in lem_token if not word in stopwords.words('english')]
         joined_text = ' '.join(lem_token)
         input_list.append(joined_text)
