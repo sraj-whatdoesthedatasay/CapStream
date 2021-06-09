@@ -9,8 +9,8 @@ import json
 import streamlit as st
 
 # Visualization library
-import seaborn as sns
-import matplotlib.pyplot as plt
+#import seaborn as sns
+#import matplotlib.pyplot as plt
 
 # NLP library
 from nltk.tokenize import word_tokenize
