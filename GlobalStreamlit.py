@@ -8,6 +8,7 @@ import string
 import json
 import streamlit as st
 import nltk
+nltk.download('wordnet')
 
 # Visualization library
 #import seaborn as sns
