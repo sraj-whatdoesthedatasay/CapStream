@@ -7,6 +7,7 @@ import pickle
 import string
 import json
 import streamlit as st
+import nltk
 
 # Visualization library
 #import seaborn as sns
