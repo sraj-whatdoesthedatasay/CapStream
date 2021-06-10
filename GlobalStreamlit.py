@@ -206,32 +206,31 @@ if page == 'Chatbot:  Answering card questions':
     # function to preprocess user inputs for nlp model
     def preprocess_nlp(question):
         input_list = []
-        st.write('h2')
         processed_question = question.replace('-', '')
         tokenizer = RegexpTokenizer('\w+|\$[\d.]+|S+')
-        st.write('h2')
+
         token = tokenizer.tokenize(processed_question.lower())
 
         lemmatizer = WordNetLemmatizer()
-        st.write('h3')
+
         lem_token = [lemmatizer.lemmatize(word) for word in token]
-        st.write('h4')
+
         #tokens_filtered= [word for word in lem_token if not word in stopwords.words('english')]
         joined_text = ' '.join(lem_token)
         input_list.append(joined_text)
-        st.write('h2')
+
         return input_list
 
     # loading models
     cs_model = pickle.load(open('./COF_CS_Chat/models/cs_model.p', 'rb'))
-    st.write('h1')
+
     # processing inputs for nlp model
     input_text = preprocess_nlp(question_text)
-    st.write(input_text)
+
     ip_series = pd.Series(input_text)
-    st.write('h2')
+
     answer_nlp = cs_model.predict(input_text)
-    st.write('h3')
+
     if question_text != '':
         ans.loc[answer_nlp[0]][0]
     st.write('***  The answer is generated using NLP **')
