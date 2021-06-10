@@ -8,7 +8,7 @@ import string
 import json
 import streamlit as st
 import nltk
-nltk.download('wordnet')
+#nltk.download('wordnet')
 
 # Visualization library
 #import seaborn as sns
@@ -30,7 +30,7 @@ manual_variable_initialization(True)
 
 #header
 st.title('Multiple NLP Algos')
-st.write('Algos help with: Spanish translation, completing sentences, chatbot to answer card questions, deducting whether post sounds like FB or Twitter')
+st.write('Algos help with: Chatbot to answer card questions, Spanish translation, completing sentences, deducting whether post sounds like FB or Twitter')
 st.write('Select your desired algo from the dropdown in the left pane')
 #st.write('#1 Translation to Spanish')
 #st.write('#2 Completing your sentences as you type')
@@ -197,7 +197,7 @@ if page == 'Chatbot:  Answering card questions':
     # user inputs
     question_text =''
     st.write('We can help with questions related to the card application process, payments, rewards, & credit bureau')
-    question_text = st.text_input("How can we help you?  Please type your question below and hit 'Enter'")
+    question_text = st.text_input("How can we help you?  Please type your question (ex: 'How do i apply for a card?') below and hit 'Enter'")
 
     #Read in the Answer Corpus
     ans_file = pd.read_csv('./COF_CS_Chat/data/IntentAnswers.csv')
@@ -233,7 +233,7 @@ if page == 'Chatbot:  Answering card questions':
 
     if question_text != '':
         ans.loc[answer_nlp[0]][0]
-    st.write('***  The answer is generated using NLP **')
+    st.write('***  The answer is generated using NLP technics and classification algos **')
     st.write('Opportunities to improve chatbot ability by feeding real chats to train the model better"')
 
     ##############################################################
