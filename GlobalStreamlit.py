@@ -39,7 +39,7 @@ st.write('Select your desired algo from the dropdown in the left pane')
 
 page = st.sidebar.selectbox(
 'Select a page:',
-('Translate to Spanish', 'Complete sentences', 'Chatbot:  Answering card questions', 'FB or Twitter', 'About')
+('Chatbot:  Answering card questions', 'Translate to Spanish', 'Complete sentences',  'FB or Twitter', 'About')
 )
 
 if page == 'About':
