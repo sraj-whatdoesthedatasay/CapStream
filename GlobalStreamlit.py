@@ -30,7 +30,7 @@ manual_variable_initialization(True)
 
 #header
 st.title('Multiple NLP Algos')
-st.write('Algos helps with: Spanish translation, completing sentences, chatbot to answer card questions, deducting whether post sounds like FB or Twitter')
+st.write('Algos help with: Spanish translation, completing sentences, chatbot to answer card questions, deducting whether post sounds like FB or Twitter')
 st.write('Select your desired algo from the dropdown in the left pane')
 #st.write('#1 Translation to Spanish')
 #st.write('#2 Completing your sentences as you type')
@@ -185,7 +185,7 @@ if page == 'Translate to Spanish':
     if question_text_eng != '':
         st.write(translated_text)
 
-    st.write('***  The text is translated using LSTM-based Neural Net models ***')
+    st.write('***  The text is translated by leveraging tokenization, lemmatization for NLP and LSTM-based Neural Net models ***')
 
     ##############################################################
     ## BELOW SECTION IS FOR AGENTS TO GET HELP FOR QUESTIONS
