@@ -241,13 +241,14 @@ if page == 'Chatbot:  Answering card questions':
 if page == 'Complete sentences':
 
     # Encoder training setup
-    num_encoder_tokens = 4872
-    num_decoder_tokens = 6030
+    num_encoder_tokens = 5286
+    num_decoder_tokens = 5264
 
-    max_encoder_seq_length = 8
-    max_decoder_seq_length = 13
+    max_encoder_seq_length = 9
+    max_decoder_seq_length = 8
 
     latent_dim = 256
+
     ## Reading the various dictionaries
     with open('./SentenceCompletion/GCP_model/data/rtfd.p', 'rb') as fp:
         reverse_target_features_dict = pickle.load(fp)
